@@ -541,7 +541,8 @@ class Hostname extends AbstractValidator
                     $regexChars = array(0 => '/^[a-z0-9\x2d]{1,63}$/i');
                     if ($this->_options['idn'] &&  isset($this->_validIdns[strtoupper($this->_tld)])) {
                         if (is_string($this->_validIdns[strtoupper($this->_tld)])) {
-                            $regexChars += include($this->_validIdns[strtoupper($this->_tld)]);
+                        	// TODO: Remove the comment below when it's fixed
+                            #$regexChars += include($this->_validIdns[strtoupper($this->_tld)]);
                         } else {
                             $regexChars += $this->_validIdns[strtoupper($this->_tld)];
                         }
